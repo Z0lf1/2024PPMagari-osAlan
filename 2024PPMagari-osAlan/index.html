@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM Vehículos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Administración de Vehículos</h1>
+    
+    <label for="filtro">Filtrar por tipo:</label>
+    <select id="filtro">
+        <option value="todos">Todos</option>
+        <option value="terrestre">Terrestres</option>
+        <option value="aereo">Aéreos</option>
+    </select>
+    <button id="calcular">Calcular Velocidad Promedio</button>
+    <div id="resultado"></div> <!-- Para mostrar el resultado -->
+
+    <button id="nuevo-vehiculo">Agregar Nuevo Vehículo</button> <!-- Botón para agregar vehículos -->
+
+    <div id="formulario-abm" style="display:none;">
+        <form id="vehiculo-form">
+            <input type="hidden" id="id" />
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" required /><br>
+
+            <label for="anoFab">Año de Fabricación:</label>
+            <input type="number" id="anoFab" required /><br>
+
+            <label for="velMax">Velocidad Máxima:</label>
+            <input type="number" id="velMax" required /><br>
+
+            <label for="tipoVehiculo">Tipo de Vehículo:</label>
+            <select id="tipoVehiculo">
+                <option value="terrestre">Terrestre</option>
+                <option value="aereo">Aéreo</option>
+            </select><br>
+
+            <div id="terrestre-fields" style="display:none;">
+                <label for="cantPue">Cantidad de Puertas:</label>
+                <input type="number" id="cantPue" /><br>
+                <label for="cantRue">Cantidad de Ruedas:</label>
+                <input type="number" id="cantRue" /><br>
+            </div>
+
+            <div id="aereo-fields" style="display:none;">
+                <label for="altMax">Altitud Máxima:</label>
+                <input type="number" id="altMax" /><br>
+                <label for="autonomia">Autonomía:</label>
+                <input type="number" id="autonomia" /><br>
+            </div>
+
+            <button type="button" id="cancelar">Cancelar</button>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <table id="tabla-datos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Año de Fabricación</th>
+                <th>Velocidad Máxima</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se llenarán aquí -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
